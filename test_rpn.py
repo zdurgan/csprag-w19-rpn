@@ -17,7 +17,11 @@ class TestBasics(unittest.TestCase):
     def test_div(self):
         result = rpn.calculate("6 3 /")
         self.assertEqual(2, result)
-        
+
+    def test_exp(self):
+        result = rpn.calculate("4 2 ^")
+        self.assertEqaul(16, result)
+
     def test_toomany(self):
         with self.assertRaises(ValueError):
             result = rpn.calculate("1 2 3 +")
