@@ -10,6 +10,14 @@ class TestBasics(unittest.TestCase):
         result = rpn.calculate("4 3 -")
         self.assertEqual(1, result)
 
+    def test_mult(self):
+        result = rpn.calculate("5 3 *")
+        self.assertEqual(15, result)
+
+    def test_div(self):
+        result = rpn.calculate("6 3 /")
+        self.assertEqual(2, result)
+        
     def test_toomany(self):
         with self.assertRaises(ValueError):
             result = rpn.calculate("1 2 3 +")
